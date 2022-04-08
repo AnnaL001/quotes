@@ -1,5 +1,5 @@
 # Quotes
-
+An Angular application that allows users to create quotes and either upvote them if the quote is inspirational or downvote them if the quote is terrible.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
