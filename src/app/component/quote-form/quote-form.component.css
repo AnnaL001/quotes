@@ -6,3 +6,12 @@ textarea.form-control:focus, input.form-control:focus {
   border-color: rgba(0, 188, 140, 0.4);
   box-shadow: 0 0 0 0.25rem rgba(0, 188, 140, 0.2);
 }
+
+section.hide{
+  display: none;
+}
+
+i.fa-xmark {
+  cursor: pointer;
+}
+

@@ -12,4 +12,11 @@ export class AppComponent {
       form?.classList.remove('hide');
     }
   }
+
+  hideForm(isHidden: boolean){
+    if(isHidden){
+      let form = document.getElementById("form");
+      form?.classList.add('hide');
+    }
+  }
 }
