@@ -8,6 +8,8 @@ import { QuoteDetailsComponent } from './component/quote-details/quote-details.c
 import { QuoteFormComponent } from './component/quote-form/quote-form.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { BannerComponent } from './component/banner/banner.component';
+import { FormsModule } from '@angular/forms';
+import { InvalidNameValidatorDirective } from './directive/invalid-name-validator.directive';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { BannerComponent } from './component/banner/banner.component';
     QuoteDetailsComponent,
     QuoteFormComponent,
     NavbarComponent,
-    BannerComponent
+    BannerComponent,
+    InvalidNameValidatorDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
