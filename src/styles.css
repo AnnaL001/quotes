@@ -7,3 +7,7 @@ button.btn {
   border-radius: 6rem;
   font-weight: 500;
 }
+
+div.card {
+  border-radius: 1rem;
+}
