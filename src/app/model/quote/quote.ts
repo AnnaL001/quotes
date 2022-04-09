@@ -5,7 +5,7 @@ export class Quote {
 
   constructor(
     public id: number,
-    public text: string,
+    public quoteText: string,
     public author: string,
     public submittedBy: string){
       this.upvote = 0;

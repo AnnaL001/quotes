@@ -7,18 +7,31 @@
           <i class="fa-solid fa-xmark text-white mt-2" (click)="hideQuoteForm(true)"></i>
         </div>
         <div class="card-body">
-          <form>
+          <form #quoteForm="ngForm">
             <div class="form-floating my-4">
-              <textarea class="form-control" name="quote-text" id="quote-text" placeholder="Enter quote"></textarea>
+              <textarea class="form-control" name="quote-text" id="quote-text"  [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" placeholder="Enter quote" required></textarea>
               <label for="quote-text">Enter quote</label>
+              <div [hidden]="quoteText.valid || quoteText.pristine">
+                <small *ngIf="quoteText.errors?.['required']" class="text-danger">Quote text is required.</small>
+              </div>
             </div>
             <div class="form-floating my-4">
-              <input type="text" class="form-control" name="author" id="author" placeholder="Enter author's name">
+              <input type="text" class="form-control" name="author" id="author" [(ngModel)]="newQuote.author" #author="ngModel" placeholder="Enter author's name" required minlength="4" appInvalidNameValidator>
               <label for="author">Enter author's name</label>
+              <div [hidden]="author.valid || author.pristine" class="vstack">
+                <small *ngIf="author.errors?.['required']" class="text-danger">Author name is required.</small>
+                <small *ngIf="author.errors?.['minlength']" class="text-danger">Author name must contain three or more alphanumerical characters.</small>
+                <small *ngIf="author.errors?.['invalidName']" class="text-danger">Author name should contain letters.</small>
+              </div>
             </div>
             <div class="form-floating my-4">
-              <input type="text" class="form-control" name="submitted-by" id="submitted-by" placeholder="Submitted by">
+              <input type="text" class="form-control" name="submitted-by" id="submitted-by" [(ngModel)]="newQuote.submittedBy" #submittedBy="ngModel" placeholder="Submitted by" required minlength="4" appInvalidNameValidator>
               <label for="author">Submitted by</label>
+              <div [hidden]="submittedBy.valid || submittedBy.pristine" class="vstack">
+                <small *ngIf="submittedBy.errors?.['required']" class="text-danger">Name of person submitting quote is required.</small>
+                <small *ngIf="submittedBy.errors?.['minlength']" class="text-danger">Name of person submitting quote must contain three or more alphanumerical characters.</small>
+                <small *ngIf="submittedBy.errors?.['invalidName']" class="text-danger">Name of person submitting quote should contain letters.</small>
+              </div>
             </div>
             <div class="mt-5 mb-4">
               <button class="btn btn-success btn-lg w-100">Add quote</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Quote } from 'src/app/model/quote/quote';
 
 @Component({
   selector: 'app-quote-form',
@@ -7,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class QuoteFormComponent implements OnInit {
 
+  newQuote = {} as Quote;
   @Output() quoteFormHidden = new EventEmitter<boolean>()
 
   constructor() { }
