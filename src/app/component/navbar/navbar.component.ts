@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Output() quoteFormDisplay = new EventEmitter<boolean>();
+
   constructor() { }
+
+  displayQuoteForm(isDisplayed: boolean){
+    this.quoteFormDisplay.emit(isDisplayed);
+  }
 
   ngOnInit(): void {
   }

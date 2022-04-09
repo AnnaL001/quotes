@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'quotes';
+  handleFormDisplay(isDisplayed: boolean){
+    if(isDisplayed){
+      let form = document.getElementById("form");
+      form?.classList.remove('hide');
+    }
+  }
 }
