@@ -5,4 +5,5 @@ body {
 
 button.btn {
   border-radius: 6rem;
+  font-weight: 500;
 }
