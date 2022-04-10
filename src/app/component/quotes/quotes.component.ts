@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Quote } from 'src/app/model/quote/quote';
-import { QuoteService } from 'src/app/service/quote.service';
+import { quotes } from 'src/app/quote-list';
 
 @Component({
   selector: 'app-quotes',
@@ -10,8 +10,6 @@ import { QuoteService } from 'src/app/service/quote.service';
 export class QuotesComponent implements OnInit {
   // Type assertions
   quotes = [] as Quote[];
-
-  constructor(private quoteService: QuoteService) { }
 
   displayForm(display: boolean){
     if(display){
@@ -25,7 +23,7 @@ export class QuotesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.quotes = this.quoteService.getQuotes();
+    this.quotes = quotes;
   }
 
   increaseUpvote(upvote: boolean, index: number){
