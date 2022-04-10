@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { Quote } from 'src/app/model/quote/quote';
 
 @Component({
   selector: 'app-quote-details',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote-details.component.css']
 })
 export class QuoteDetailsComponent implements OnInit {
+  // Type assertions
+  @Input() quote = {} as Quote;
 
   constructor() { }
 
