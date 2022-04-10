@@ -10,6 +10,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { BannerComponent } from './component/banner/banner.component';
 import { FormsModule } from '@angular/forms';
 import { InvalidNameValidatorDirective } from './directive/invalid-name-validator.directive';
+import { DatePassedPipe } from './pipe/date-passed.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InvalidNameValidatorDirective } from './directive/invalid-name-validato
     QuoteFormComponent,
     NavbarComponent,
     BannerComponent,
-    InvalidNameValidatorDirective
+    InvalidNameValidatorDirective,
+    DatePassedPipe
   ],
   imports: [
     BrowserModule,
