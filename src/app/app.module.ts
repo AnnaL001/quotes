@@ -11,6 +11,7 @@ import { BannerComponent } from './component/banner/banner.component';
 import { FormsModule } from '@angular/forms';
 import { InvalidNameValidatorDirective } from './directive/invalid-name-validator.directive';
 import { DatePassedPipe } from './pipe/date-passed.pipe';
+import { HighestUpvotesDirective } from './directive/highest-upvotes.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DatePassedPipe } from './pipe/date-passed.pipe';
     NavbarComponent,
     BannerComponent,
     InvalidNameValidatorDirective,
-    DatePassedPipe
+    DatePassedPipe,
+    HighestUpvotesDirective
   ],
   imports: [
     BrowserModule,
