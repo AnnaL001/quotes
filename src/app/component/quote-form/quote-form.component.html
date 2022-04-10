@@ -7,7 +7,7 @@
           <i class="fa-solid fa-xmark text-white mt-2" (click)="hideQuoteForm(true)"></i>
         </div>
         <div class="card-body">
-          <form #quoteForm="ngForm">
+          <form #quoteForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-floating my-4">
               <textarea class="form-control" name="quote-text" id="quote-text"  [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" placeholder="Enter quote" required></textarea>
               <label for="quote-text">Enter quote</label>
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="mt-5 mb-4">
-              <button class="btn btn-success btn-lg w-100">Add quote</button>
+              <button class="btn btn-success btn-lg w-100" type="submit">Add quote</button>
             </div>
           </form>
         </div>

@@ -10,11 +10,16 @@ export class QuoteFormComponent implements OnInit {
 
   newQuote = {} as Quote;
   @Output() quoteFormHidden = new EventEmitter<boolean>()
+  @Output() createQuote = new EventEmitter()
 
   constructor() { }
 
   hideQuoteForm(isHidden: boolean){
     this.quoteFormHidden.emit(isHidden);
+  }
+
+  onSubmit(){
+    this.createQuote.emit(this.newQuote);
   }
 
   ngOnInit(): void {
