@@ -1,5 +1,5 @@
 <div class="text-center my-4">
-  <button class="btn btn-success" (click)="displayForm(true)">Create new quote</button>
+  <button class="btn btn-success my-3" (click)="displayForm(true)">Create new quote</button>
 </div>
 <app-quote-form  (quoteFormHidden)="hideForm($event)" (createQuote)="addNewQuote($event)"></app-quote-form>
 <section id="quotes">
