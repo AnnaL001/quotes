@@ -1,9 +1,16 @@
-<div class="card">
-  <div class="card-body">
-    <p class="card-text fs-6">{{quote.quoteText}}</p>
-    <p class="card-text text-center fst-italic">-- {{quote.author}} --</p>
-    <div class="text-center">
-      <a class="card-link mx-auto" href="">Details</a>
+<div>
+  <p class="card-text text-center my-2">Submitted by {{quote.submittedBy}}</p>
+</div>
+<div class="card-footer">
+  <div class="row">
+    <div class="col-2">
+      <i class="fa-solid fa-arrow-up text-success" (click)="upvoteAQuote(true)"></i>{{quote.upvote}}
+    </div>
+    <div class="col-2">
+      <i class="fa-solid fa-arrow-down text-danger" (click)="downvoteAQuote(true)"></i>{{quote.downvote}}
+    </div>
+    <div class="col-8 text-end">
+      Added {{quote.dateCreated|datePassed}}
     </div>
   </div>
 </div>
