@@ -1,3 +1,4 @@
+import { Quote } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,17 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  handleFormDisplay(isDisplayed: boolean){
-    if(isDisplayed){
-      let form = document.getElementById("form");
-      form?.classList.remove('hide');
-    }
-  }
-
-  hideForm(isHidden: boolean){
-    if(isHidden){
-      let form = document.getElementById("form");
-      form?.classList.add('hide');
-    }
-  }
+  constructor(){}
 }
