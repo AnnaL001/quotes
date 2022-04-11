@@ -86,4 +86,13 @@ export class QuotesComponent implements OnInit {
     this.quotes.unshift(quote);
     console.log(this.quotes);
   }
+
+  deleteQuote(isTobeDeleted: boolean, index: number){
+    if(isTobeDeleted){
+      let toDelete = confirm(`Are you sure you want to delete the quote: ${this.quotes[index].quoteText}?`);
+      if(toDelete){
+        this.quotes.splice(index, 1);
+      }
+    }
+  }
 }

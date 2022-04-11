@@ -12,6 +12,7 @@ export class QuoteDetailsComponent implements OnInit {
   @Input() quote = {} as Quote;
   @Output() quoteUpvote = new EventEmitter<boolean>();
   @Output() quoteDownvote = new EventEmitter<boolean>();
+  @Output() quoteDeletion = new EventEmitter<boolean>();
 
   upvoteAQuote(upvote: boolean){
     this.quoteUpvote.emit(upvote)
@@ -19,6 +20,10 @@ export class QuoteDetailsComponent implements OnInit {
 
   downvoteAQuote(downvote: boolean){
     this.quoteDownvote.emit(downvote)
+  }
+
+  deleteAQuote(isTobeDeleted: boolean){
+    this.quoteDeletion.emit(isTobeDeleted);
   }
 
   constructor() { }
