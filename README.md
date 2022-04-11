@@ -10,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * To access the web application's code locally, you can clone the main branch or download the ZIP folder via the 'Code' button
 * Once locally, you can view the web application code via a text editor
 * Otherwise to view the web application, navigate to the live site below: <br>
+  [Live Site](https://AnnaL001.github.io/quotes)
 * To carry out other operations, the guidelines/commands are as listed below:
   #### Development server
   Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
