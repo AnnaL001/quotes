@@ -2,7 +2,7 @@ import { Quote } from "./model/quote/quote";
 
 // Initial array with 6 quotes
 export const quotes: Quote[] = [
-  new Quote(1, 'Stay hungry.Stay foolish', 'Steve Jobs', 'Lynn Nyangon', new Date(2022, 2, 10)),
+  new Quote(1, "I'm convinced that about half of what separates the successful entrepreneurs from the nonsuccessful ones is pure perseverance.", 'Steve Jobs', 'Lynn Nyangon', new Date(2022, 2, 10)),
   new Quote(
     2,
     'Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid',
@@ -19,14 +19,14 @@ export const quotes: Quote[] = [
   ),
   new Quote(
     4,
-    "Your time is limited so don't waste it living somebody else's life",
+    "Stay hungry. Stay foolish",
     'Steve Jobs',
     'Lynn Nyangon',
     new Date(2022, 0, 18)
   ),
   new Quote(
     5,
-    'When they go low, we go high',
+    "You can't make decisions based on fear and the possibility of what might happen.",
     'Michelle Obama',
     'Lynn Nyangon',
     new Date(2011, 3, 6)
