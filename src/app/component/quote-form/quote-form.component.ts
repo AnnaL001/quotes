@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Quote } from 'src/app/model/quote/quote';
 
 @Component({
@@ -10,7 +11,7 @@ export class QuoteFormComponent implements OnInit {
 
   newQuote = {} as Quote;
   @Output() quoteFormHidden = new EventEmitter<boolean>()
-  @Output() createQuote = new EventEmitter()
+  @Output() createQuote = new EventEmitter<Quote>()
 
   constructor() { }
 
@@ -18,8 +19,10 @@ export class QuoteFormComponent implements OnInit {
     this.quoteFormHidden.emit(isHidden);
   }
 
-  onSubmit(){
-    this.createQuote.emit(this.newQuote);
+  onSubmit(form: NgForm){
+    let sentQuote = new Quote(0, form.value.quoteText, form.value.author, form.value.submittedBy, new Date());
+    this.createQuote.emit(sentQuote);
+    form.reset();
   }
 
   ngOnInit(): void {
