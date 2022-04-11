@@ -20,6 +20,7 @@ export class QuoteFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
+    // Capture values before reset
     let sentQuote = new Quote(0, form.value.quoteText, form.value.author, form.value.submittedBy, new Date());
     this.createQuote.emit(sentQuote);
     form.reset();
