@@ -4,10 +4,10 @@
 <div class="card-footer">
   <div class="row">
     <div class="col-2">
-      <i class="fa-solid fa-thumbs-up text-success" (click)="upvoteAQuote(true)"></i>{{quote.upvote}}
+      <i class="fa-solid fa-thumbs-up text-success upvote" (click)="upvoteAQuote(true)"></i>{{quote.upvote}}
     </div>
     <div class="col-2">
-      <i class="fa-solid fa-thumbs-down text-danger" (click)="downvoteAQuote(true)"></i>{{quote.downvote}}
+      <i class="fa-solid fa-thumbs-down text-danger downvote" (click)="downvoteAQuote(true)"></i>{{quote.downvote}}
     </div>
     <div class="col-2">
       <i class="fa-solid fa-trash text-light" (click)="deleteAQuote(true)"></i>
