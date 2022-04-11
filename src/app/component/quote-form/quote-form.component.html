@@ -7,9 +7,9 @@
           <i class="fa-solid fa-xmark text-white mt-2" (click)="hideQuoteForm(true)"></i>
         </div>
         <div class="card-body">
-          <form #quoteForm="ngForm" (ngSubmit)="onSubmit()">
+          <form #quoteForm="ngForm" (ngSubmit)="onSubmit(quoteForm)">
             <div class="form-floating my-4">
-              <textarea class="form-control" name="quote-text" id="quote-text"  [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" placeholder="Enter quote" required></textarea>
+              <textarea class="form-control" name="quoteText" id="quote-text"  [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" placeholder="Enter quote" required></textarea>
               <label for="quote-text">Enter quote</label>
               <div [hidden]="quoteText.valid || quoteText.pristine">
                 <small *ngIf="quoteText.errors?.['required']" class="text-danger">Quote text is required.</small>
@@ -25,7 +25,7 @@
               </div>
             </div>
             <div class="form-floating my-4">
-              <input type="text" class="form-control" name="submitted-by" id="submitted-by" [(ngModel)]="newQuote.submittedBy" #submittedBy="ngModel" placeholder="Submitted by" required minlength="4" appInvalidNameValidator>
+              <input type="text" class="form-control" name="submittedBy" id="submitted-by" [(ngModel)]="newQuote.submittedBy" #submittedBy="ngModel" placeholder="Submitted by" required minlength="4" appInvalidNameValidator>
               <label for="author">Submitted by</label>
               <div [hidden]="submittedBy.valid || submittedBy.pristine" class="vstack">
                 <small *ngIf="submittedBy.errors?.['required']" class="text-danger">Name of person submitting quote is required.</small>
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="mt-5 mb-4 text-center">
-              <button class="btn btn-success py-2" type="submit">Add quote</button>
+              <button type="submit" class="btn btn-success py-2">Add quote</button>
             </div>
           </form>
         </div>
