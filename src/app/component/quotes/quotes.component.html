@@ -1,21 +1,42 @@
 <div class="text-center my-4">
   <button class="btn btn-success my-3" (click)="displayForm(true)">Create new quote</button>
 </div>
-<app-quote-form  (quoteFormHidden)="hideForm($event)" (createQuote)="addNewQuote($event)"></app-quote-form>
+<app-quote-form (quoteFormHidden)="hideForm($event)" (createQuote)="addNewQuote($event)"></app-quote-form>
 <section id="quotes">
   <div class="container">
     <div class="row gy-3">
-      <div [appHighestUpvotes]="quotes" *ngFor="let quote of quotes; let quoteIndex = index" class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <p class="card-text fs-6">{{quote.quoteText}}</p>
-            <p class="card-text text-center fst-italic">-- {{quote.author}} --</p>
-            <div class="text-center">
-              <a class="card-link mx-auto" href="#" (click)="toggleQuoteDetails(quoteIndex)">Details</a>
+      <div *ngFor="let quote of quotes; let quoteIndex = index" class="col-12 col-md-6 col-lg-4">
+        <div *ngIf="quote.upvote > 0 && quote.upvote == getHighestUpvote(quotes) then featured else normal"></div>
+        <ng-template #featured>
+          <div appHighestUpvotes class="card h-100">
+            <div class="card-body">
+              <p class="card-text fs-6">{{quote.quoteText}}</p>
+              <p class="card-text text-center fst-italic">-- {{quote.author}} --</p>
+              <div class="text-center">
+                <a class="card-link mx-auto" href="#" (click)="toggleQuoteDetails(quoteIndex)">Details</a>
+              </div>
+              <app-quote-details *ngIf="quote.showDetails" [quote]="quote"
+                (quoteUpvote)="increaseUpvote($event, quoteIndex)"
+                (quoteDownvote)="increaseDownvote($event, quoteIndex)"
+                (quoteDeletion)="deleteQuote($event, quoteIndex)"></app-quote-details>
             </div>
-            <app-quote-details *ngIf="quote.showDetails" [quote]="quote" (quoteUpvote)="increaseUpvote($event, quoteIndex)" (quoteDownvote)="increaseDownvote($event, quoteIndex)" (quoteDeletion)="deleteQuote($event, quoteIndex)"></app-quote-details>
           </div>
-        </div>
+        </ng-template>
+        <ng-template #normal>
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text fs-6">{{quote.quoteText}}</p>
+              <p class="card-text text-center fst-italic">-- {{quote.author}} --</p>
+              <div class="text-center">
+                <a class="card-link mx-auto" href="#" (click)="toggleQuoteDetails(quoteIndex)">Details</a>
+              </div>
+              <app-quote-details *ngIf="quote.showDetails" [quote]="quote"
+                (quoteUpvote)="increaseUpvote($event, quoteIndex)"
+                (quoteDownvote)="increaseDownvote($event, quoteIndex)"
+                (quoteDeletion)="deleteQuote($event, quoteIndex)"></app-quote-details>
+            </div>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

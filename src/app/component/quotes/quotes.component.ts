@@ -9,7 +9,7 @@ import { quotes } from 'src/app/quote-list';
 })
 export class QuotesComponent implements OnInit {
   // Type assertions
-  quotes = [] as Quote[];
+  quotes = quotes;
 
   /**
    * Function to display form when the 'Create new quote' button is clicked
@@ -31,7 +31,11 @@ export class QuotesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.quotes = quotes;
+  }
+
+  getHighestUpvote(quotes: Quote[]){
+    let highestUpvote = Math.max(...quotes.map(quote => quote.upvote), 1);
+    return highestUpvote;
   }
 
   /**
@@ -64,6 +68,18 @@ export class QuotesComponent implements OnInit {
     }
   }
 
+    /**
+   * Function to add quote to the beginning of the quote list
+   * @param quote Quote to be added
+   */
+  addNewQuote(quote: Quote){
+    quote.id = this.quotes.length + 1;
+    quote.upvote = 0;
+    quote.downvote = 0;
+    this.quotes.unshift(quote);
+    console.log(this.quotes);
+  }
+
   /**
    * Function to hide form when x-mark icon is clicked
    * @param isHidden If user would like to hide form
@@ -75,17 +91,6 @@ export class QuotesComponent implements OnInit {
     }
   }
 
-  /**
-   * Function to add quote to the beginning of the quote list
-   * @param quote Quote to be added
-   */
-  addNewQuote(quote: Quote){
-    quote.id = this.quotes.length + 1;
-    quote.upvote = 0;
-    quote.downvote = 0;
-    this.quotes.unshift(quote);
-    console.log(this.quotes);
-  }
 
   deleteQuote(isTobeDeleted: boolean, index: number){
     if(isTobeDeleted){
