@@ -2,7 +2,7 @@
 #### An Angular application that allows users to create quotes and either upvote them if the quote is inspirational or downvote them if the quote is terrible.
 #### By **[Lynn Nyangon](https://github.com/AnnaL001)**
 ## Description
-The quotes app is an Angular web application that allows users to submit quotes and have them either upvoted or downvoted depending on whether they are inspirational or terrible. This is besides, displaying added quotes and an initial list of quotes. Aside from that, other functionalities added include form validation, toggling of the form and highlighting the most upvoted quote.
+The quotes app is an Angular web application that allows users to submit quotes and have them either upvoted or downvoted depending on whether they are inspirational or terrible. This is besides, displaying added quotes and an initial list of quotes. Aside from that, other functionalities added include creation of a quote by collecting form inputs, form validation, toggling of the form, deletion of a quote and highlighting the most upvoted quote.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 ## Setup/Installation Requirements
 * Using a mobile device/laptop ensure you have access to stable internet connection
