@@ -9,6 +9,7 @@
         <div *ngIf="quote.upvote > 0 && quote.upvote == getHighestUpvote(quotes) then featured else normal"></div>
         <ng-template #featured>
           <div appHighestUpvotes class="card h-100">
+            <span class="badge rounded-pill bg-success w-25 mt-2 mx-2">Most upvoted</span>
             <div class="card-body">
               <p class="card-text fs-6">{{quote.quoteText}}</p>
               <p class="card-text text-center fst-italic">-- {{quote.author}} --</p>
