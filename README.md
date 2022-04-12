@@ -8,7 +8,8 @@ The project was generated with [Angular CLI](https://github.com/angular/angular-
 * Using a mobile device/laptop ensure you have access to stable internet connection
 * To access the web application's code from your GitHub repository, you can fork the repository main's branch via the 'Fork' button.
 * To access the web application's code locally, you can clone the main branch or download the ZIP folder via the 'Code' button
-* Once locally, you can view the web application code via a text editor
+* Once locally, you can view the web application code via a text editor.
+* To run the code locally, ensure you have NodeJS and Node Package Manager(NPM) installed.
 * Otherwise to view the web application, navigate to the live site below: <br>
   [Live Site](https://AnnaL001.github.io/quotes)
 * To carry out other operations, the guidelines/commands are as listed below:
@@ -24,6 +25,10 @@ The project was generated with [Angular CLI](https://github.com/angular/angular-
   Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
   #### Further help
   To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.  
+## Dependencies
+* NodeJS.
+* Node Package Manager(NPM).
+* Node Version Manager(NVM).
 ## Technologies Used
 * Angular Framework
 * HTML - For structure of the page
