@@ -26,6 +26,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.  
 ## Technologies Used
 * Angular Framework
+* HTML - For structure of the page
+* CSS - For styling of the page
+* Bootstrap - For predefined styles thus speed up development time
+* JavaScript/TypeScript - For UI behavior and logic
 ## Support and contact details
 In case of any queries you can reach out via email; lynn.nyangon@gmail.com
 ### License
