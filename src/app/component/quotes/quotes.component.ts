@@ -46,7 +46,7 @@ export class QuotesComponent implements OnInit {
   increaseUpvote(upvote: boolean, index: number){
     if(upvote){
       this.quotes[index].upvote++;
-      // Reduce downvote if it is greater than 0 thus produce a canceling effect on downvotes
+      // Reduce downvote if it is greater than 0 thus produce a canceling effect on downvotes as one can only upvote or downvote but not both
       if(this.quotes[index].downvote > 0){
         this.quotes[index].downvote--;
       }
@@ -61,7 +61,7 @@ export class QuotesComponent implements OnInit {
   increaseDownvote(downvote: boolean, index: number){
     if(downvote){
       this.quotes[index].downvote++;
-      // Reduce upvote if it is greater than 0 thus produce a canceling effect on upvotes
+      // Reduce upvote if it is greater than 0 thus produce a canceling effect on upvotes as one can only upvote or downvote at a time but not both
       if(this.quotes[index].upvote > 0){
         this.quotes[index].upvote--;
       }
